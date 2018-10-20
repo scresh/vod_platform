@@ -13,11 +13,34 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from . import views
-from django.urls import path
+
+from django.conf.urls import url
+from .models import Film
+from django.urls import path, include
+from rest_framework import routers, serializers, viewsets
+
+
+# Serializers define the API representation.
+class FilmSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Film
+        fields = ('title', 'description', 'price')
+
+
+# ViewSets define the view behavior.
+class FilmViewSet(viewsets.ModelViewSet):
+    queryset = Film.objects.all()
+    serializer_class = FilmSerializer
+
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'films', FilmViewSet)
 
 urlpatterns = [
-    path('', views.film_list),
-    path('', views.login),
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls')),
+    # path('', views.film_list),
+    # path('', views.login),
 
 ]
