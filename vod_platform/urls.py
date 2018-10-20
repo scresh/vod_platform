@@ -18,4 +18,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.film_list),
+    path('', views.login),
+
 ]
