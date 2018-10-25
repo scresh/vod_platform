@@ -2,6 +2,8 @@ from .models import Film, Language, Category, FilmCategory
 from django.shortcuts import render
 
 
+# salt for md5: E2MvtGg8Rs
+
 def film_list(request):
     all_films = Film.objects.all().values()
     for i in range(len(all_films)):
