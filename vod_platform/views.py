@@ -1,6 +1,5 @@
 from rest_framework import viewsets
-from .serializers import FilmSerializer
-from .models import Film, Language, Category, FilmCategory
+from . import serializers, models
 from django.shortcuts import render
 
 
@@ -9,22 +8,28 @@ from django.shortcuts import render
 
 # ViewSets define the view behavior.
 class FilmViewSet(viewsets.ModelViewSet):
-    queryset = Film.objects.all()
-    serializer_class = FilmSerializer
+    queryset = models.Film.objects.all()
+    serializer_class = serializers.FilmSerializer
 
 
-def film_list(request):
-    all_films = Film.objects.all().values()
-    for i in range(len(all_films)):
-        all_films[i]['language'] = Language.objects.all().get(id=all_films[i]['language_id_id']).name
+class LanguageViewSet(viewsets.ModelViewSet):
+    queryset = models.Language.objects.all()
+    serializer_class = serializers.LanguageSerializer
 
-        all_films[i]['category'] = Category.objects.all().get(
-            id=FilmCategory.objects.all().get(film_id_id=all_films[i]['id']).category_id.id
-        ).name
-        del all_films[i]['language_id_id']
-        del all_films[i]['description']
 
-    return render(request, 'list.html', {'film_list': all_films})
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = models.Category.objects.all()
+    serializer_class = serializers.CategorySerializer
+
+
+class ActorViewSet(viewsets.ModelViewSet):
+    queryset = models.Actor.objects.all()
+    serializer_class = serializers.ActorSerializer
+
+
+class SubtitlesViewSet(viewsets.ModelViewSet):
+    queryset = models.Subtitles.objects.all()
+    serializer_class = serializers.SubtitlesSerializers
 
 
 def login(request):
