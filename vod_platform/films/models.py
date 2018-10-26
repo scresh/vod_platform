@@ -1,30 +1,27 @@
 from django.db import models
-
-
-class Group(models.Model):
-    name = models.CharField(max_length=16)
-
-
-class Permissions(models.Model):
-    group_id = models.ForeignKey(Group, on_delete=models.CASCADE)
-    add_film = models.BooleanField()
-    edit_film = models.BooleanField()
-    delete_film = models.BooleanField()
-    can_login = models.BooleanField()
-    edit_balance = models.BooleanField()
+from django.contrib.auth.models import User
 
 
 class Language(models.Model):
     name = models.CharField(max_length=16, null=True, unique=True)
 
+    class Meta:
+        ordering = ('name',)
+
 
 class Category(models.Model):
     name = models.CharField(max_length=64)
+
+    class Meta:
+        ordering = ('name',)
 
 
 class Actor(models.Model):
     first_name = models.CharField(max_length=32)
     last_name = models.CharField(max_length=32)
+
+    class Meta:
+        ordering = ('last_name', 'first_name')
 
 
 class Film(models.Model):
@@ -35,34 +32,37 @@ class Film(models.Model):
     length = models.SmallIntegerField()
     price = models.FloatField(default=2.5)
 
+    class Meta:
+        ordering = ('id',)
+
 
 class FilmCategory(models.Model):
     film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('category_id',)
 
 
 class FilmActor(models.Model):
     film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
     actor_id = models.ForeignKey(Actor, on_delete=models.CASCADE)
 
-
-class User(models.Model):
-    first_name = models.CharField(max_length=32)
-    last_name = models.CharField(max_length=32)
-    username = models.CharField(max_length=16, unique=True)
-    password = models.CharField(max_length=32)
-    email = models.EmailField(max_length=64, unique=True)
-    balance = models.FloatField(default=10.0)
-    group_id = models.ForeignKey(Group, on_delete=models.CASCADE)
+    class Meta:
+        ordering = ('actor_id',)
 
 
 class UserFilm(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, related_name='films', on_delete=models.CASCADE)
     film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('user_id',)
 
 
 class Subtitles(models.Model):
     language_id = models.ForeignKey(Language, on_delete=models.CASCADE)
     film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
 
-
+    class Meta:
+        ordering = ('film_id',)

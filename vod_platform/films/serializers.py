@@ -26,7 +26,25 @@ class ActorSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'first_name', 'last_name')
 
 
-class SubtitlesSerializers(serializers.HyperlinkedModelSerializer):
+class FilmCategorySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.FilmCategory
+        fields = ('id', 'film_id', 'category_id')
+
+
+class FilmActorSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.FilmActor
+        fields = ('id', 'film_id', 'actor_id')
+
+
+class SubtitlesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Subtitles
         fields = ('id', 'language_id', 'film_id')
+
+
+class UserFilmSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = models.UserFilm
+        fields = ('id', 'user_id', 'film_id')
