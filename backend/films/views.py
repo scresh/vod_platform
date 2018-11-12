@@ -103,9 +103,9 @@ class ActorViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ActorSerializer
 
 
-class FilmCategoryViewSet(viewsets.ModelViewSet):
-    queryset = models.FilmCategory.objects.all()
-    serializer_class = serializers.FilmCategorySerializer
+# class FilmCategoryViewSet(viewsets.ModelViewSet):
+#     queryset = models.FilmCategory.objects.all()
+#     serializer_class = serializers.FilmCategorySerializer
 
 
 class FilmActorViewSet(viewsets.ModelViewSet):

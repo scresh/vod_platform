@@ -11,10 +11,11 @@ class LanguageSerializer(serializers.HyperlinkedModelSerializer):
 class FilmSerializer(serializers.HyperlinkedModelSerializer):
     language_id = LanguageSerializer()
     release_year = serializers.SerializerMethodField('get_year')
+    category = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
 
     class Meta:
         model = models.Film
-        fields = ('id', 'title', 'description', 'release_year', 'language_id', 'length', 'price')
+        fields = ('id', 'title', 'description', 'release_year', 'language_id', 'length', 'price', 'category')
 
     @staticmethod
     def get_year(obj):
@@ -33,10 +34,10 @@ class ActorSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'first_name', 'last_name')
 
 
-class FilmCategorySerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = models.FilmCategory
-        fields = ('id', 'film_id', 'category_id')
+# class FilmCategorySerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = models.FilmCategory
+#         fields = ('id', 'film_id', 'category_id')
 
 
 class FilmActorSerializer(serializers.HyperlinkedModelSerializer):

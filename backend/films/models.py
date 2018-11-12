@@ -33,17 +33,18 @@ class Film(models.Model):
     length = models.SmallIntegerField()
     price = models.FloatField(default=2.5)
 
+    category = models.ManyToManyField(Category, related_name='film')
+
     class Meta:
         ordering = ('id',)
 
 
-
-class FilmCategory(models.Model):
-    film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
-    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-
-    class Meta:
-        ordering = ('category_id',)
+# class FilmCategory(models.Model):
+#     film_id = models.ForeignKey(Film, related_name='categories', on_delete=models.CASCADE)
+#     category_id = models.ForeignKey(Category, related_name='films', on_delete=models.CASCADE)
+#
+#     class Meta:
+#         ordering = ('category_id',)
 
 
 class FilmActor(models.Model):

@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Avatar, Icon, Tooltip, Badge} from 'antd';
+import { List, Avatar, Icon, Tooltip, Tag } from 'antd';
 
 
 const IconText = ({ type, text }) => (
@@ -44,6 +44,16 @@ const Films = (props) => {
                         description={item.description}
                     />
                     {item.content}
+
+                    <div>
+                        <h4 style={{ marginBottom: 16 }}>Categories:</h4>
+                        <div>
+                            { item.category.map(
+                                (category) =>
+                                <Tag color="magenta"> { category } </Tag>
+                            )}
+                        </div>
+                    </div>
                 </List.Item>
             )}
         />
