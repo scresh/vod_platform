@@ -27,8 +27,8 @@ const Films = (props) => {
                     key={item.title}
                     actions={[
                         <IconText type="clock-circle" text={ item.length + ' min' } />,
-                        <IconText type="like-o" text="156" />,
-                        <IconText type="message" text="2" />,
+                        <IconText type="dollar" text={ "$" + item.price } />,
+                        <IconText type="calendar" text={ item.release_year } />,
                     ]}
                     extra={
                         <img width={272} alt="logo" src={"films/" + item.id + ".jpg"} />
