@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Language(models.Model):
     name = models.CharField(max_length=16, null=True, unique=True)
+    icon_name = models.CharField(max_length=16)
 
     class Meta:
         ordering = ('name',)
@@ -28,12 +29,13 @@ class Film(models.Model):
     title = models.CharField(max_length=128)
     description = models.CharField(max_length=1024)
     release_date = models.DateField()
-    language_id = models.ForeignKey(Language, on_delete=models.SET(0))
+    language_id = models.ForeignKey(Language, related_name='films', on_delete=models.SET(0))
     length = models.SmallIntegerField()
     price = models.FloatField(default=2.5)
 
     class Meta:
         ordering = ('id',)
+
 
 
 class FilmCategory(models.Model):

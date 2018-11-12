@@ -2,16 +2,23 @@ from rest_framework import serializers
 from . import models
 
 
-class FilmSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = models.Film
-        fields = ('id', 'title', 'description', 'release_date', 'language_id', 'length', 'price')
-
-
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Language
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'icon_name')
+
+
+class FilmSerializer(serializers.HyperlinkedModelSerializer):
+    language_id = LanguageSerializer()
+    release_year = serializers.SerializerMethodField('get_year')
+
+    class Meta:
+        model = models.Film
+        fields = ('id', 'title', 'description', 'release_year', 'language_id', 'length', 'price')
+
+    @staticmethod
+    def get_year(obj):
+        return str(obj.release_date).split('-')[0]
 
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
