@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Films from '../components/Films';
-
+import CustomForm from '../components/Form';
 
 class FilmList extends React.Component {
     state = {
@@ -22,7 +22,15 @@ class FilmList extends React.Component {
 
     render() {
         return (
-            <Films data={this.state.films}/>
+            <div>
+                <Films data={this.state.films}/>
+                <br/>
+                <h2>Create o movie </h2>
+                <CustomForm
+                    requestType="post"
+                    filmID={null}
+                    btnText="Create"/>
+            </div>
         );
     }
 }
