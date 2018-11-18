@@ -7,7 +7,7 @@ const { Header, Content, Sider } = Layout;
 
 const CustomLayout = (props) => {
     return (
-        <Layout>
+        <Layout className="layout">
             <Header className="header">
                 <div className="logo" />
                 <Menu
@@ -16,9 +16,23 @@ const CustomLayout = (props) => {
                     defaultSelectedKeys={['2']}
                     style={{ lineHeight: '64px' }}
                 >
-                    <Menu.Item key="1">nav 1</Menu.Item>
-                    <Menu.Item key="2">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>
+                {
+                    props.isAuthenticated ?
+
+                        <Menu.Item key="2" onClick={this.props.logout}>
+                            Logout
+                        </Menu.Item>
+
+                        :
+
+                        <Menu.Item key="2">
+                            <Link to="/login">Login</Link>
+                        </Menu.Item>
+                }
+
+                <Menu.Item key="1">
+                    <Link to="/">Posts</Link>
+                </Menu.Item>
                 </Menu>
             </Header>
             <Layout>
