@@ -1,71 +1,39 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User as DjangoUser
 
 
 class Language(models.Model):
-    name = models.CharField(max_length=16, null=True, unique=True)
-    icon_name = models.CharField(max_length=16)
-
-    class Meta:
-        ordering = ('name',)
+    name = models.CharField(max_length=16, unique=True)
+    icon_filename = models.CharField(max_length=16)
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=64)
-
-    class Meta:
-        ordering = ('name',)
+    name = models.CharField(max_length=16)
+    icon_filename = models.CharField(max_length=16)
 
 
 class Actor(models.Model):
-    first_name = models.CharField(max_length=32)
-    last_name = models.CharField(max_length=32)
-
-    class Meta:
-        ordering = ('last_name', 'first_name')
+    first_name = models.CharField(max_length=16)
+    last_name = models.CharField(max_length=16)
+    photo_filename = models.CharField(max_length=16)
 
 
 class Film(models.Model):
-    title = models.CharField(max_length=128)
-    description = models.CharField(max_length=1024)
-    release_date = models.DateField()
-    language_id = models.ForeignKey(Language, related_name='films', on_delete=models.SET(0))
-    length = models.SmallIntegerField()
-    price = models.FloatField(default=2.5)
+    title = models.CharField(max_length=32)
+    info = models.CharField(max_length=256)
+    description = models.TextField(max_length=2048)
+    release_year = models.PositiveSmallIntegerField()
 
-    category = models.ManyToManyField(Category, related_name='film')
+    language = models.ForeignKey(Language, related_name='films', on_delete=models.CASCADE)
+    subtitles = models.ManyToManyField(Language, related_name='films_subtitles')
 
-    class Meta:
-        ordering = ('id',)
+    length = models.PositiveSmallIntegerField()
+    price = models.DecimalField(max_digits=4, decimal_places=2)
 
-
-# class FilmCategory(models.Model):
-#     film_id = models.ForeignKey(Film, related_name='categories', on_delete=models.CASCADE)
-#     category_id = models.ForeignKey(Category, related_name='films', on_delete=models.CASCADE)
-#
-#     class Meta:
-#         ordering = ('category_id',)
+    category = models.ManyToManyField(Category, related_name='films')
+    photo_filename = models.CharField(max_length=16)
 
 
-class FilmActor(models.Model):
-    film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
-    actor_id = models.ForeignKey(Actor, on_delete=models.CASCADE)
-
-    class Meta:
-        ordering = ('actor_id',)
-
-
-class UserFilm(models.Model):
-    user_id = models.ForeignKey(User, related_name='films', on_delete=models.CASCADE)
-    film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
-
-    class Meta:
-        ordering = ('user_id',)
-
-
-class Subtitles(models.Model):
-    language_id = models.ForeignKey(Language, on_delete=models.CASCADE)
-    film_id = models.ForeignKey(Film, on_delete=models.CASCADE)
-
-    class Meta:
-        ordering = ('film_id',)
+class User(models.Model):
+    user = models.OneToOneField(DjangoUser, on_delete=models.CASCADE)
+    films = models.ManyToManyField(Film)

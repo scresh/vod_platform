@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aeb40992-bea2-4259-986f-00bf67a35877" name="Default Changelist" comment="" />
+    <list default="true" id="aeb40992-bea2-4259-986f-00bf67a35877" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0002_auto_20181026_1954.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0003_auto_20181112_1019.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0004_auto_20181112_1307.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0005_auto_20181112_1308.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0006_auto_20181112_1939.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0007_auto_20181112_1940.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0008_auto_20181112_1946.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/films/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/films/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/films/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/films/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/users/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/vod_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/vod_platform/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/vod_platform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/vod_platform/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -57,13 +82,16 @@
     <session id="-1077837412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="1" />
+          <entry key="ESLintLanguageService" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -80,47 +108,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/FilmDetailView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="285">
               <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Layout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Films.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/FilmListView.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -184,9 +176,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="67" />
+    <option name="y" value="27" />
+    <option name="width" value="1853" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -194,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -223,6 +215,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +256,7 @@
         <script value="start" />
       </scripts>
       <node-interpreter value="project" />
-      <package-manager value="/usr/share/npm" />
+      <package-manager value="npm" />
       <envs />
       <method v="2" />
     </configuration>
@@ -283,20 +276,22 @@
       <workItem from="1542025960099" duration="3051000" />
       <workItem from="1542029752351" duration="3857000" />
       <workItem from="1542050418654" duration="2285000" />
+      <workItem from="1543015947834" duration="1099000" />
+      <workItem from="1543019823025" duration="522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20052000" />
+    <option name="totallyTimeSpent" value="22032000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1987" y="27" width="1853" height="1053" extended-state="6" />
+    <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24986331" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24986331" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33040616" />
@@ -373,23 +368,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/FilmDetailView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -397,9 +379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -407,6 +386,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/FilmDetailView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
