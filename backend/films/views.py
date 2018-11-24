@@ -1,27 +1,131 @@
 from films import models, serializers
-from rest_framework import generics, viewsets
+from rest_framework import generics
 
 
-class FilmViewSet(viewsets.ModelViewSet):
-    queryset = models.Film.objects.all()
-    serializer_class = serializers.FilmSerializer
-
-
-class LanguageViewSet(viewsets.ModelViewSet):
+# Language views
+class LanguageListView(generics.ListAPIView):
     queryset = models.Language.objects.all()
-    serializer_class = serializers.LanguageSerializer
+    serializer_class = serializers.LanguageListCreateUpdateDestroySerializer
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class LanguageRetrieveView(generics.RetrieveAPIView):
+    queryset = models.Language.objects.all()
+    serializer_class = serializers.LanguageRetrieveSerializer
+
+
+class LanguageCreateView(generics.CreateAPIView):
+    queryset = models.Language.objects.all()
+    serializer_class = serializers.LanguageListCreateUpdateDestroySerializer
+
+
+class LanguageUpdateView(generics.UpdateAPIView):
+    queryset = models.Language.objects.all()
+    serializer_class = serializers.LanguageListCreateUpdateDestroySerializer
+
+
+class LanguageDestroyView(generics.DestroyAPIView):
+    queryset = models.Language.objects.all()
+    serializer_class = serializers.LanguageListCreateUpdateDestroySerializer
+
+
+# Category views
+class CategoryListView(generics.ListAPIView):
     queryset = models.Category.objects.all()
-    serializer_class = serializers.CategorySerializer
+    serializer_class = serializers.CategoryListCreateUpdateDestroySerializer
 
 
-class ActorViewSet(viewsets.ModelViewSet):
+class CategoryRetrieveView(generics.RetrieveAPIView):
+    queryset = models.Category.objects.all()
+    serializer_class = serializers.CategoryRetrieveSerializer
+
+
+class CategoryCreateView(generics.CreateAPIView):
+    queryset = models.Category.objects.all()
+    serializer_class = serializers.CategoryListCreateUpdateDestroySerializer
+
+
+class CategoryUpdateView(generics.UpdateAPIView):
+    queryset = models.Category.objects.all()
+    serializer_class = serializers.CategoryListCreateUpdateDestroySerializer
+
+
+class CategoryDestroyView(generics.DestroyAPIView):
+    queryset = models.Category.objects.all()
+    serializer_class = serializers.CategoryListCreateUpdateDestroySerializer
+
+
+# Actor views
+class ActorListView(generics.ListAPIView):
     queryset = models.Actor.objects.all()
-    serializer_class = serializers.ActorSerializer
+    serializer_class = serializers.ActorListCreateUpdateDestroySerializer
 
 
-class UserViewSet(viewsets.ModelViewSet):
+class ActorRetrieveView(generics.RetrieveAPIView):
+    queryset = models.Actor.objects.all()
+    serializer_class = serializers.ActorRetrieveSerializer
+
+
+class ActorCreateView(generics.CreateAPIView):
+    queryset = models.Actor.objects.all()
+    serializer_class = serializers.ActorListCreateUpdateDestroySerializer
+
+
+class ActorUpdateView(generics.UpdateAPIView):
+    queryset = models.Actor.objects.all()
+    serializer_class = serializers.ActorListCreateUpdateDestroySerializer
+
+
+class ActorDestroyView(generics.DestroyAPIView):
+    queryset = models.Actor.objects.all()
+    serializer_class = serializers.ActorListCreateUpdateDestroySerializer
+
+
+# Film views
+class FilmListView(generics.ListAPIView):
+    queryset = models.Film.objects.all()
+    serializer_class = serializers.FilmListSerializer
+
+
+class FilmRetrieveView(generics.RetrieveAPIView):
+    queryset = models.Film.objects.all()
+    serializer_class = serializers.FilmRetrieveSerializer
+
+
+class FilmCreateView(generics.CreateAPIView):
+    queryset = models.Film.objects.all()
+    serializer_class = serializers.FilmCreateUpdateDestroySerializer
+
+
+class FilmUpdateView(generics.UpdateAPIView):
+    queryset = models.Film.objects.all()
+    serializer_class = serializers.FilmCreateUpdateDestroySerializer
+
+
+class FilmDestroyView(generics.DestroyAPIView):
+    queryset = models.Film.objects.all()
+    serializer_class = serializers.FilmCreateUpdateDestroySerializer
+
+
+class UserListView(generics.ListAPIView):
     queryset = models.User.objects.all()
-    serializer_class = serializers.UserSerializer
+    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+
+
+class UserRetrieveView(generics.ListAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserRetrieveSerializer
+
+
+class UserCreateView(generics.CreateAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+
+
+class UserUpdateView(generics.UpdateAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+
+
+class UserDestroyView(generics.DestroyAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserListCreateUpdateDestroySerializer

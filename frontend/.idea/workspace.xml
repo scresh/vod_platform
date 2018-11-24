@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeb40992-bea2-4259-986f-00bf67a35877" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../backend/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0002_auto_20181026_1954.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0003_auto_20181112_1019.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0004_auto_20181112_1307.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0005_auto_20181112_1308.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0006_auto_20181112_1939.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0007_auto_20181112_1940.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/0008_auto_20181112_1946.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/films/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/films/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/films/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/films/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/films/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/films/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/films/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/users/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../backend/vod_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/vod_platform/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/vod_platform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/vod_platform/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -82,16 +64,17 @@
     <session id="-1077837412">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="3" />
+          <entry key="ESLintLanguageService" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -104,18 +87,47 @@
           <entry key="JavaScript" value="68" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="js" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="JavaScript" value="4" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/FilmDetailView.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state>
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="8" column="50" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Films.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -187,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,7 +228,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -277,12 +289,14 @@
       <workItem from="1542029752351" duration="3857000" />
       <workItem from="1542050418654" duration="2285000" />
       <workItem from="1543015947834" duration="1099000" />
-      <workItem from="1543019823025" duration="522000" />
+      <workItem from="1543019823025" duration="761000" />
+      <workItem from="1543053303145" duration="599000" />
+      <workItem from="1543081871083" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22032000" />
+    <option name="totallyTimeSpent" value="23469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
@@ -291,7 +305,7 @@
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24986331" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.24986331" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33040616" />
@@ -344,30 +358,6 @@
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="59" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -382,20 +372,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Films.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/FilmDetailView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Films.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
         </state>
       </provider>
     </entry>
