@@ -5,6 +5,12 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 const { Header, Content, Footer } = Layout;
+import BaseRouter from './routes';
+import { connect } from 'react-redux';
+import './App.css';
+import 'antd/dist/antd.css';
+import CustomLayout from './containers/Layout'
+import * as actions from './store/actions/auth';
 
 
 const AppLayout = (props) => {
@@ -24,11 +30,6 @@ const AppLayout = (props) => {
                 </Menu>
             </Header>
             <Content style={{ padding: '0 50px' }}>
-                {/*<Breadcrumb style={{ margin: '16px 0' }}>*/}
-                    {/*<Breadcrumb.Item>Home</Breadcrumb.Item>*/}
-                    {/*<Breadcrumb.Item>List</Breadcrumb.Item>*/}
-                    {/*<Breadcrumb.Item>App</Breadcrumb.Item>*/}
-                {/*</Breadcrumb>*/}
                 <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
                     {props.children}
                 </div>
@@ -39,7 +40,6 @@ const AppLayout = (props) => {
         </Layout>
     );
 };
-
 
 class App extends Component {
   render() {

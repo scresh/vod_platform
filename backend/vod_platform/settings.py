@@ -118,9 +118,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-#     'PAGE_SIZE': 25
-# }
+REST_FRAMEWORK = {
+#    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#    'PAGE_SIZE': 25
+    'DEFAULT_PERMISSION_CLASSES': (
+        # TODO: ZROBIC XD
+        # 'rest_framework.permissions.AllowAny'
+    )
+ }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
