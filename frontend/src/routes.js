@@ -1,14 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import FilmList from './containers/FilmListView';
-import FilmDetail from "./containers/FilmDetailView";
-
+import FilmList from "./components/FilmList";
 
 const BaseRouter = () => (
     <div>
-        <Route exact path='/' component={ FilmList } />
-        <Route exact path='/:filmID' component={ FilmDetail } />
-
+        <Route exact path='/' component={ FilmList} />
     </div>
 );
 
