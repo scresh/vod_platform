@@ -148,7 +148,7 @@ class AddFilmFormComponent extends Component {
                         </span>
                     )}
                 >
-                    {getFieldDecorator('category', {
+                    {getFieldDecorator('actors', {
                         rules: [{ required: true, message: 'Please select film actors!', }],
                     })(
                         <Select
