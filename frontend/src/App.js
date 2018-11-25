@@ -1,16 +1,10 @@
 import './App.css';
 import 'antd/dist/antd.css';
-import BaseRouter from './routes';
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
-const { Header, Content, Footer } = Layout;
 import BaseRouter from './routes';
-import { connect } from 'react-redux';
-import './App.css';
-import 'antd/dist/antd.css';
-import CustomLayout from './containers/Layout'
-import * as actions from './store/actions/auth';
+const { Header, Content, Footer } = Layout;
 
 
 const AppLayout = (props) => {
