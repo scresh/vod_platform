@@ -7,8 +7,10 @@ class FilmDetail extends React.Component {
     state = {
         film: {}
     };
+    filmID;
 
     componentDidMount() {
+        console.log("HEJKA!");
         const filmID = this.props.match.params.filmID;
         axios.get(`http://127.0.0.1:8000/films/${filmID}/`)
             .then(
@@ -24,6 +26,7 @@ class FilmDetail extends React.Component {
         return (
             <div>
                 <Card
+
                     title={this.state.film.title}
                     cover={<img  width={272} alt={this.state.film.title} src={"../films/" + this.state.film.id + ".jpg"} />}
                 >

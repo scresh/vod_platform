@@ -9,6 +9,7 @@ const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
 
 class NormalLoginForm extends React.Component {
+    userName;
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -61,11 +62,6 @@ class NormalLoginForm extends React.Component {
                                 <Button type="primary" htmlType="submit" style={{marginRight: '10px'}}>
                                     Login
                                 </Button>
-                                Or
-                                <NavLink
-                                    style={{marginRight: '10px'}}
-                                    to='/signup/'> signup
-                                </NavLink>
                             </FormItem>
                         </Form>
                 }

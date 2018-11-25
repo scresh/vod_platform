@@ -1,14 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import Films from '../components/Films';
-import CustomForm from '../components/Form';
-import {Col, Input, Row} from "antd";
-
+import Films from "../components/Films";
+import { Row, Col } from 'antd';
+import { Input } from 'antd';
 const Search = Input.Search;
 
-
-class FilmList extends React.Component {
-
+class UserList extends React.Component {
     state = {
         films: []
     };
@@ -44,18 +41,11 @@ class FilmList extends React.Component {
                     </Col>
                     <Col span={2} order={1}>Tytuł: </Col>
                 </Row>
-                <h2>Create o movie </h2>
-                <CustomForm
-                    requestType="post"
-                    filmID={null}
-                    btnText="Create"/>
                 <Films data={this.state.films}/>
                 <br/>
-
-
             </div>
         );
     }
 }
 
-export default FilmList;
+export default UserList;
