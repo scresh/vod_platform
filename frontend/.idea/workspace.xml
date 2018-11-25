@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9907263c-3237-48a3-9ecc-8201df9b303c" name="Default Changelist" comment="Improve film listing &amp; Add basic form for creating new film">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vod_platform.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/films/migrations/0003_auto_20181124_1932.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/films/migrations/0004_film_actor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/films/default.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -264,7 +273,7 @@
       <option name="presentableId" value="Default" />
       <updated>1543089948871</updated>
       <workItem from="1543089952981" duration="7623000" />
-      <workItem from="1543142818494" duration="16495000" />
+      <workItem from="1543142818494" duration="17093000" />
     </task>
     <task id="LOCAL-00001" summary="Improve film listing &amp; Add basic form for creating new film">
       <created>1543158546964</created>
@@ -277,7 +286,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24118000" />
+    <option name="totallyTimeSpent" value="24716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
