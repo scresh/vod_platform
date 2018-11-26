@@ -61,7 +61,7 @@ class FilmRetrieveSerializer(serializers.ModelSerializer):
     language = serializers.StringRelatedField()
     subtitles = serializers.StringRelatedField(many=True)
     category = serializers.StringRelatedField(many=True)
-    actor = serializers.StringRelatedField(many=True)
+    # actor = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = models.Film
@@ -70,6 +70,7 @@ class FilmRetrieveSerializer(serializers.ModelSerializer):
             'release_year', 'language', 'subtitles',
             'length', 'price', 'category', 'photo_url',
         )
+        depth = 1
 
 
 class FilmCreateUpdateDestroySerializer(serializers.ModelSerializer):
