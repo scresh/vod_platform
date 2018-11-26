@@ -4,7 +4,7 @@ from django.contrib.auth.models import User as DjangoUser
 
 class Language(models.Model):
     name = models.CharField(max_length=16, unique=True)
-    icon_filename = models.CharField(max_length=16, default='default.png')
+    icon_url = models.CharField(max_length=256, default='/images/languages/default.png')
 
     def __str__(self):
         return f'{self.name}'
@@ -12,7 +12,6 @@ class Language(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=16)
-    icon_filename = models.CharField(max_length=16, default='default.png')
 
     def __str__(self):
         return f'{self.name}'
@@ -21,7 +20,7 @@ class Category(models.Model):
 class Actor(models.Model):
     first_name = models.CharField(max_length=16)
     last_name = models.CharField(max_length=16)
-    photo_filename = models.CharField(max_length=16, default='default.png')
+    photo_url = models.CharField(max_length=256, default='/images/actors/default.png')
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -42,7 +41,7 @@ class Film(models.Model):
     category = models.ManyToManyField(Category, related_name='films')
     actor = models.ManyToManyField(Actor, related_name='films')
 
-    photo_filename = models.CharField(max_length=16, default='default.png')
+    photo_url = models.CharField(max_length=256, default='/images/films/default.png')
 
     def __str__(self):
         return f'[{self.release_year}] {self.title}'

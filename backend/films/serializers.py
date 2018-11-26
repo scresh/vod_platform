@@ -5,7 +5,7 @@ from . import models
 class LanguageListCreateUpdateDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Language
-        fields = ('id', 'name', 'icon_filename')
+        fields = ('id', 'name', 'icon_url')
 
 
 class LanguageRetrieveSerializer(serializers.ModelSerializer):
@@ -13,13 +13,13 @@ class LanguageRetrieveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Language
-        fields = ('id', 'name', 'icon_filename', 'films')
+        fields = ('id', 'name', 'icon_url', 'films')
 
 
 class CategoryListCreateUpdateDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Category
-        fields = ('id', 'name', 'icon_filename')
+        fields = ('id', 'name')
 
 
 class CategoryRetrieveSerializer(serializers.ModelSerializer):
@@ -27,13 +27,13 @@ class CategoryRetrieveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Category
-        fields = ('id', 'name', 'icon_filename', 'films')
+        fields = ('id', 'name', 'films')
 
 
 class ActorListCreateUpdateDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Actor
-        fields = ('id', 'first_name', 'last_name', 'photo_filename')
+        fields = ('id', 'first_name', 'last_name', 'photo_url')
 
 
 class ActorRetrieveSerializer(serializers.ModelSerializer):
@@ -41,7 +41,7 @@ class ActorRetrieveSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Actor
-        fields = ('id', 'first_name', 'last_name', 'photo_filename', 'films')
+        fields = ('id', 'first_name', 'last_name', 'photo_url', 'films')
 
 
 class FilmListSerializer(serializers.ModelSerializer):
@@ -52,7 +52,7 @@ class FilmListSerializer(serializers.ModelSerializer):
         model = models.Film
         fields = (
             'id', 'title', 'info', 'release_year', 'language',
-            'length', 'price', 'category', 'photo_filename'
+            'length', 'price', 'category', 'photo_url'
         )
         depth = 1
 
@@ -68,7 +68,7 @@ class FilmRetrieveSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'title', 'info', 'description', 'actor',
             'release_year', 'language', 'subtitles',
-            'length', 'price', 'category', 'photo_filename',
+            'length', 'price', 'category', 'photo_url',
         )
 
 
@@ -78,7 +78,7 @@ class FilmCreateUpdateDestroySerializer(serializers.ModelSerializer):
         fields = (
             'id', 'title', 'info', 'description', 'actor',
             'release_year', 'language', 'subtitles',
-            'length', 'price', 'category', 'photo_filename'
+            'length', 'price', 'category', 'photo_url'
         )
 
 
