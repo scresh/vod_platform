@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { Card } from 'antd';
-import CustomForm from '../components/Form';
+import { Card , List, Avatar} from 'antd';
+
 
 class FilmDetail extends React.Component {
     state = {
@@ -22,16 +22,27 @@ class FilmDetail extends React.Component {
 
     render() {
         return (
-            <div>
+            <div align="center">
                 <Card
+                    style={{ width: 800 }}
                     title={this.state.film.title}
-                    cover={<img  width={272} alt={this.state.film.title} src={"../films/" + this.state.film.id + ".jpg"} />}
+                    cover={<img alt={this.state.film.title} src={this.state.film.photo_url} />}
+
                 >
                     <p>{this.state.film.description}</p>
-                    <CustomForm
-                        requestType="put"
-                        filmID={this.props.match.params.filmID}
-                        btnText="Update"/>
+                    <List
+                        itemLayout="vertical"
+                        dataSource={this.state.film.actor}
+                        renderItem={actor => (
+                            <List.Item>
+                                <List.Item.Meta
+                                    avatar={<Avatar src={actor.photo_url} />}
+                                    title={<a href="https://ant.design">{actor.last_name +" " + actor.first_name}</a>}
+
+                                />
+                            </List.Item>
+                        )}
+                    />
                 </Card>
             </div>
         );
