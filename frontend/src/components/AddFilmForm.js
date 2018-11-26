@@ -287,7 +287,7 @@ class AddFilmFormComponent extends Component {
                         </span>
                     )}
                 >
-                    {getFieldDecorator('photo_filename', {
+                    {getFieldDecorator('photo_url', {
                         rules: [{ required: true, message: 'Please enter film photo filename!', whitespace: true }],
                     })(
                         <Input />

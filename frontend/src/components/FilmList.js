@@ -44,13 +44,13 @@ class FilmList extends Component {
                                 <IconText type="calendar" text={ item.release_year } />,
                             ]}
                             extra={
-                                <img width={272} alt="logo" src={"films/" + item.photo_filename } />
+                                <img width={272} alt="logo" src={item.photo_url} />
                             }
                         >
                             <List.Item.Meta
                                 avatar={
                                     <Tooltip title={ item.language.name }>
-                                        <Avatar src={ "languages/" + item.language.icon_filename } />
+                                        <Avatar src={item.language.icon_url } />
                                     </Tooltip>
                                 }
                                 title={<a href={`/${item.id}/`}>{item.title}</a>}
