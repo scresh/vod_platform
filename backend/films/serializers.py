@@ -45,7 +45,6 @@ class ActorRetrieveSerializer(serializers.ModelSerializer):
 
 
 class FilmListSerializer(serializers.ModelSerializer):
-    # language = serializers.StringRelatedField()
     category = serializers.StringRelatedField(many=True)
 
     class Meta:
@@ -61,7 +60,6 @@ class FilmRetrieveSerializer(serializers.ModelSerializer):
     language = serializers.StringRelatedField()
     subtitles = serializers.StringRelatedField(many=True)
     category = serializers.StringRelatedField(many=True)
-    # actor = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = models.Film
@@ -83,16 +81,18 @@ class FilmCreateUpdateDestroySerializer(serializers.ModelSerializer):
         )
 
 
-class UserRetrieveSerializer(serializers.ModelSerializer):
+class UserListRetrieveSerializer(serializers.ModelSerializer):
     films = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = models.User
         fields = ('id', 'user', 'films', 'balance')
+        depth = 1
 
 
-class UserListCreateUpdateDestroySerializer(serializers.ModelSerializer):
+class UserCreateUpdateDestroySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.User
-        fields = ('id', 'user', 'balance')
+        fields = ('id', 'user', 'films', 'balance')
+
 
