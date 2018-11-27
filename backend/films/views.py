@@ -108,24 +108,24 @@ class FilmDestroyView(generics.DestroyAPIView):
 
 class UserListView(generics.ListAPIView):
     queryset = models.User.objects.all()
-    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+    serializer_class = serializers.UserListRetrieveSerializer
 
 
 class UserRetrieveView(generics.ListAPIView):
     queryset = models.User.objects.all()
-    serializer_class = serializers.UserRetrieveSerializer
+    serializer_class = serializers.UserListRetrieveSerializer
 
 
 class UserCreateView(generics.CreateAPIView):
     queryset = models.User.objects.all()
-    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+    serializer_class = serializers.UserCreateUpdateDestroySerializer
 
 
 class UserUpdateView(generics.UpdateAPIView):
     queryset = models.User.objects.all()
-    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+    serializer_class = serializers.UserCreateUpdateDestroySerializer
 
 
 class UserDestroyView(generics.DestroyAPIView):
     queryset = models.User.objects.all()
-    serializer_class = serializers.UserListCreateUpdateDestroySerializer
+    serializer_class = serializers.UserCreateUpdateDestroySerializer
