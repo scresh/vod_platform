@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
-import { Card , List, Avatar} from 'antd';
+import {Card, List, Avatar, Icon, Tag} from 'antd';
 
+const IconText = ({ type, text }) => (
+    <span><Icon type={type} style={{ marginRight: 8 }} />{text}</span>
+);
 
-class FilmDetail extends React.Component {
+class FilmDetail extends Component {
     state = {
         film: {}
     };
@@ -29,6 +32,19 @@ class FilmDetail extends React.Component {
                     cover={<img alt={this.state.film.title} src={this.state.film.photo_url} />}
 
                 >
+
+                    <List.Item
+                        key={this.state.film.title}
+                        actions={[
+                            <IconText type="clock-circle" text={ this.state.film.length + ' min' } />,
+                            <IconText type="dollar" text={ this.state.film.price + " PLN"} />,
+                            <IconText type="calendar" text={ this.state.film.release_year } />,
+                        ]}
+                    >
+                        <div>
+                            <Tag color="magenta" > { this.state.film.category } </Tag>
+                        </div>
+                    </List.Item>
                     <p>{this.state.film.description}</p>
                     <List
                         itemLayout="vertical"
@@ -42,6 +58,12 @@ class FilmDetail extends React.Component {
                                 />
                             </List.Item>
                         )}
+                    />
+                    <h3 style={{ marginBottom: 16 }}>Subtitles</h3>
+                    <List
+                        bordered
+                        dataSource={this.state.film.subtitles}
+                        renderItem={subtitles => (<List.Item>{subtitles}</List.Item>)}
                     />
                 </Card>
             </div>
