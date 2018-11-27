@@ -8,14 +8,18 @@ const IconText = ({ type, text }) => (
 );
 
 class FilmList extends Component {
-    state = {};
+    state = {
+        initialValues: {},
+        filmID: null,
+    };
 
     componentDidMount() {
         axios.get('http://127.0.0.1:8000/films/?format=json')
             .then(
                 res => {
                     this.setState({
-                        films: res.data
+                        films: res.data,
+                        initialValues: {},
                     });
                 }
             );
@@ -26,7 +30,7 @@ class FilmList extends Component {
         return (
             <div className="FilmList">
                 <List
-                    header={<RightDrawer />}
+                    header={<RightDrawer initialValues={this.state.initialValues} filmID={this.state.filmID}/>}
                     grid={{ gutter: 32, column: 2 }}
                     itemLayout="vertical"
                     size="large"

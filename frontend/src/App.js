@@ -1,10 +1,10 @@
 import './App.css';
 import 'antd/dist/antd.css';
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router , Link} from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import BaseRouter from './routes';
-const { Header, Content, Footer } = Layout;
+const { Header, Content, Footer} = Layout;
 
 
 const AppLayout = (props) => {
@@ -18,9 +18,8 @@ const AppLayout = (props) => {
                     defaultSelectedKeys={['2']}
                     style={{ lineHeight: '64px' }}
                 >
-                    <Menu.Item key="1">Films</Menu.Item>
-                    <Menu.Item key="2">Actors</Menu.Item>
-                    <Menu.Item key="3">Categories</Menu.Item>
+                    <Menu.Item key="home"><Link to="/">Home</Link></Menu.Item>
+
                 </Menu>
             </Header>
             <Content style={{ padding: '0 50px' }}>

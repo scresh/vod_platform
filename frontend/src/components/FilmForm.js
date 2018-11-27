@@ -64,13 +64,20 @@ class AddFilmFormComponent extends Component {
         event.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
-
-                axios.post("http://127.0.0.1:8000/films/create/", values)
-                    .then(res => {
-                        if (res.status === 201) {
-                        }
-                    })
+                if (this.props.filmID === null) {
+                    axios.post("http://127.0.0.1:8000/films/create/", values)
+                        .then(res => {
+                            if (res.status === 201) {
+                            }
+                        })
+                } else {
+                    axios.put(`http://127.0.0.1:8000/films/${this.props.filmID}/update/`, values)
+                        .then(res => {
+                            if (res.status === 200) {
+                            }
+                        })
+                }
+                window.location.reload();
             }
         });
 
@@ -108,7 +115,12 @@ class AddFilmFormComponent extends Component {
                 >
                     {
                         getFieldDecorator(
-                            'title', {rules: [{ required: true, message: 'Please enter film title!', whitespace: true }]}
+                            'title', {
+                                rules: [{ required: true, message: 'Please enter film title!', whitespace: true }],
+                                initialValue: this.props.initialValues.title,
+                                key: "title",
+                            },
+
                             )(
                                 <Input />
                         )
@@ -127,7 +139,12 @@ class AddFilmFormComponent extends Component {
                 >
                     {
                         getFieldDecorator(
-                            'info', {rules: [{ required: true, message: 'Please enter film info!', whitespace: true }]}
+                            'info', {
+                                rules: [{ required: true, message: 'Please enter film info!', whitespace: true }],
+                                initialValue: this.props.initialValues.info,
+                                key: 'info',
+                            }
+
                             )(
                                 <Input />
                         )
@@ -146,8 +163,10 @@ class AddFilmFormComponent extends Component {
                 >
                     {
                         getFieldDecorator('description', {
-                        rules: [{ required: true, message: 'Please enter film description!', whitespace: true }],
-                    })(
+                            rules: [{ required: true, message: 'Please enter film description!', whitespace: true }],
+                            initialValue: this.props.initialValues.description,
+                            key: 'description',
+                        })(
                         <TextArea rows={4}/>
                     )}
                 </FormItem>
@@ -161,8 +180,11 @@ class AddFilmFormComponent extends Component {
                 >
                     {
                         getFieldDecorator('category', {
-                        rules: [{ required: true, message: 'Please select film categories!'}],
-                    })(
+                            rules: [{ required: true, message: 'Please select film categories!'}],
+                            initialValue: this.props.initialValues.category,
+                            key: 'category',
+
+                        })(
                         <CheckboxGroup options={this.state.categories} />
                     )}
                 </FormItem>
@@ -176,6 +198,9 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('release_year', {
                         rules: [{ required: true, message: 'Please enter film year!' }],
+                        initialValue: this.props.initialValues.release_year,
+                        key: 'release_year',
+
                     })(
                         <InputNumber min={1950} max={2019} />
                     )}
@@ -190,6 +215,9 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('language', {
                         rules: [{ required: true, message: 'Please enter film language!' }],
+                        initialValue: this.props.initialValues.language,
+                        key: 'language',
+
                     })(
                         <Select >
                             {this.state.languages.map(
@@ -210,6 +238,8 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('subtitles', {
                         rules: [{ required: true, message: 'Please select film subtitles!', }],
+                        initialValue: this.props.initialValues.subtitles,
+                        key: 'subtitles',
                     })(
                         <Select
                             mode="multiple"
@@ -234,6 +264,9 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('actor', {
                         rules: [{ required: true, message: 'Please select film actor!' }],
+                        initialValue: this.props.initialValues.actor,
+                        key: 'actor',
+
 
                     })(
                         <Select
@@ -258,6 +291,9 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('length', {
                         rules: [{ required: true, message: 'Please enter film length!' }],
+                        initialValue: this.props.initialValues.length,
+                        key: 'length',
+
                     })(
                         <InputNumber min={5} max={1440} />
                     )}
@@ -273,6 +309,9 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('price', {
                         rules: [{ required: true, message: 'Please enter film price!' }],
+                        initialValue: this.props.initialValues.price,
+                        key: 'price',
+
                     })(
                         <InputNumber min={0.5} max={10} step={0.01} />)}
                 </FormItem>
@@ -289,6 +328,9 @@ class AddFilmFormComponent extends Component {
                 >
                     {getFieldDecorator('photo_url', {
                         rules: [{ required: true, message: 'Please enter film photo filename!', whitespace: true }],
+                        initialValue: this.props.initialValues.photo_url,
+                        key: 'photo_url',
+
                     })(
                         <Input />
                     )}
@@ -301,6 +343,6 @@ class AddFilmFormComponent extends Component {
     }
 }
 
-const AddFilmForm = Form.create()(AddFilmFormComponent);
+const FilmForm = Form.create()(AddFilmFormComponent);
 
-export default AddFilmForm;
+export default FilmForm;

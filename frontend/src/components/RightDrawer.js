@@ -1,10 +1,25 @@
 import React, {Component} from 'react';
 import { Drawer, Button } from 'antd';
-import AddFilmForm from './AddFilmForm';
+import FilmForm from './FilmForm';
 
 
 class RightDrawer extends Component {
-    state = { visible: false };
+    state = {
+        visible: false,
+        button_name: "",
+    };
+
+    componentDidMount() {
+        if (this.props.filmID === null){
+            this.setState({
+                button_name: "Add film",
+            });
+        }else {
+            this.setState({
+                button_name: "Edit film",
+            });
+        }
+    }
 
     showDrawer = () => {
         this.setState({
@@ -22,7 +37,7 @@ class RightDrawer extends Component {
         return (
             <div align="left">
                 <Button type="primary" onClick={this.showDrawer}>
-                    Add film
+                    {this.state.button_name}
                 </Button>
                 <Drawer
                     title="Add new film"
@@ -32,7 +47,7 @@ class RightDrawer extends Component {
                     visible={this.state.visible}
                     width={512}
                 >
-                    <AddFilmForm />
+                    <FilmForm initialValues={this.props.initialValues} filmID={this.props.filmID}/>
                 </Drawer>
             </div>
         );

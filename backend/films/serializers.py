@@ -53,14 +53,11 @@ class FilmListSerializer(serializers.ModelSerializer):
             'id', 'title', 'info', 'release_year', 'language',
             'length', 'price', 'category', 'photo_url'
         )
+
         depth = 1
 
 
 class FilmRetrieveSerializer(serializers.ModelSerializer):
-    language = serializers.StringRelatedField()
-    subtitles = serializers.StringRelatedField(many=True)
-    category = serializers.StringRelatedField(many=True)
-
     class Meta:
         model = models.Film
         fields = (

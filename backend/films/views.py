@@ -1,5 +1,6 @@
 from films import models, serializers
 from rest_framework import generics
+import django_filters.rest_framework
 
 
 # Language views
@@ -84,6 +85,9 @@ class ActorDestroyView(generics.DestroyAPIView):
 class FilmListView(generics.ListAPIView):
     queryset = models.Film.objects.all()
     serializer_class = serializers.FilmListSerializer
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_fields = ('release_year', 'title')
+
 
 
 class FilmRetrieveView(generics.RetrieveAPIView):
