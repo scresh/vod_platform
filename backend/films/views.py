@@ -1,6 +1,7 @@
 from films import models, serializers
 from rest_framework import generics
 import django_filters.rest_framework
+from rest_framework.permissions import IsAdminUser
 
 
 # Language views
@@ -110,25 +111,35 @@ class FilmDestroyView(generics.DestroyAPIView):
 
 
 class UserListView(generics.ListAPIView):
+    permission_classes = (IsAdminUser, )
+
     queryset = models.User.objects.all()
     serializer_class = serializers.UserListRetrieveSerializer
 
 
 class UserRetrieveView(generics.ListAPIView):
+    permission_classes = (IsAdminUser, )
+
     queryset = models.User.objects.all()
     serializer_class = serializers.UserListRetrieveSerializer
 
 
 class UserCreateView(generics.CreateAPIView):
+    permission_classes = (IsAdminUser, )
+
     queryset = models.User.objects.all()
     serializer_class = serializers.UserCreateUpdateDestroySerializer
 
 
 class UserUpdateView(generics.UpdateAPIView):
+    permission_classes = (IsAdminUser, )
+
     queryset = models.User.objects.all()
     serializer_class = serializers.UserCreateUpdateDestroySerializer
 
 
 class UserDestroyView(generics.DestroyAPIView):
+    permission_classes = (IsAdminUser, )
+
     queryset = models.User.objects.all()
     serializer_class = serializers.UserCreateUpdateDestroySerializer

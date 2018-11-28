@@ -6,8 +6,9 @@ import UserList from "./components/UserList";
 
 const BaseRouter = () => (
     <div>
-        <Route exact path='/' component={ FilmList} />
-        <Route exact path='/:filmID' component={ FilmDetails } />
+        <Route exact path='/films' component={ FilmList} />
+
+        <Route exact path='/films/:filmID' component={ FilmDetails } />
         <Route exact path='/users' component={ UserList } />
 
         {/*<Route exact path='/login' component={Login}/>*/}

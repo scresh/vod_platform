@@ -72,24 +72,13 @@ class FilmDetails extends Component {
     render() {
         return (
             <div align="center">
-                <Popconfirm
-                    title="Are you sure delete this film?"
-                    onConfirm={this.confirmDelete}
-                    onCancel={this.cancelDelete}
-                    okText="Yes" cancelText="No"
-                >
-                    <Button type="danger"  size="large" icon="delete" style={{width: 200}}>Delete</Button>
-                </Popconfirm>
-                <RightDrawer initialValues={this.state.initialValues} filmID={this.state.filmID}/>
-
-
                 <Card
                     style={{ width: 800 }}
                     title={this.state.film.title}
                     cover={<img alt={this.state.film.title} src={this.state.film.photo_url} />}
 
                 >
-
+                    <RightDrawer initialValues={this.state.initialValues} filmID={this.state.filmID}/>
                     <List.Item
                         key={this.state.film.title}
                         actions={[
@@ -123,6 +112,14 @@ class FilmDetails extends Component {
                         dataSource={this.state.film.subtitles}
                         renderItem={subtitles => (<List.Item>{subtitles.name}</List.Item>)}
                     />
+                    <Popconfirm
+                        title="Are you sure delete this film?"
+                        onConfirm={this.confirmDelete}
+                        onCancel={this.cancelDelete}
+                        okText="Yes" cancelText="No"
+                    >
+                        <Button block type="danger"  size="large" icon="delete" >Delete</Button>
+                    </Popconfirm>
                 </Card>
             </div>
         );
