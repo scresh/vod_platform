@@ -25,7 +25,7 @@ class AddFilmFormComponent extends Component {
                 res => {
                     this.setState({
                         categories: res.data.map(
-                            (category) => ({ label: category.name, value: category.id })
+                            (category) => ({ key: category.name, label: category.name, value: category.id })
                         )
                     });
                 }
@@ -222,7 +222,7 @@ class AddFilmFormComponent extends Component {
                         <Select >
                             {this.state.languages.map(
                                 language =>
-                                    <Option value={language.id} >{language.name}</Option>)
+                                    <Option key={language.name} value={language.id} >{language.name}</Option>)
                             }
                         </Select>
                     )}
@@ -248,7 +248,7 @@ class AddFilmFormComponent extends Component {
                         >
                             {this.state.languages.map(
                                 language =>
-                                    <Option value={language.id}>{language.name}</Option>)
+                                    <Option key={language.name} value={language.id}>{language.name}</Option>)
                             }
                         </Select>
                     )}
@@ -276,7 +276,7 @@ class AddFilmFormComponent extends Component {
                         >
                             {this.state.actors.map(
                                 actor =>
-                                    <Option value={actor.id}>{actor.full_name}</Option>)
+                                    <Option key={actor.full_name} value={actor.id}>{actor.full_name}</Option>)
                             }
                         </Select>
                     )}
