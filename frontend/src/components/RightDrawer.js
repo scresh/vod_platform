@@ -42,8 +42,8 @@ class RightDrawer extends Component {
 
     render() {
         return (
-            <div align="left">
-                <Button type="primary" onClick={this.showDrawer} size="large" icon={this.state.button_icon}>
+            <div>
+                <Button type="primary" style={{width: 200}} onClick={this.showDrawer} size="large" icon={this.state.button_icon} >
                     {this.state.button_name}
                 </Button>
                 <Drawer

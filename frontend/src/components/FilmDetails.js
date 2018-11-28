@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Card, List, Avatar, Icon, Tag, Button} from 'antd';
-import RightDrawer from "../components/RightDrawer";
+import {Card, List, Avatar, Icon, Tag, Button, Popconfirm, message} from 'antd';
+import RightDrawer from "./RightDrawer";
 
 const IconText = ({ type, text }) => (
     <span><Icon type={type} style={{ marginRight: 8 }} />{text}</span>
 );
 
-class FilmDetail extends Component {
+class FilmDetails extends Component {
     state = {
         film: {
             category: []
@@ -16,16 +16,21 @@ class FilmDetail extends Component {
         filmID: this.props.match.params.filmID,
     };
 
-    handleDelete = (event) => {
+    confirmDelete = (event) => {
         event.preventDefault();
         axios.delete(`http://127.0.0.1:8000/films/${this.state.filmID}/delete/`)
             .then(res => {
-                if (res.status === 200) {
+                if (res.status === 204) {
+                    window.location.replace('/');
                 }
+
             })
         ;
 
+    };
 
+    cancelDelete = () => {
+        message.error('Movie deletion was canceled');
     };
 
     componentDidMount() {
@@ -67,8 +72,17 @@ class FilmDetail extends Component {
     render() {
         return (
             <div align="center">
+                <Popconfirm
+                    title="Are you sure delete this film?"
+                    onConfirm={this.confirmDelete}
+                    onCancel={this.cancelDelete}
+                    okText="Yes" cancelText="No"
+                >
+                    <Button type="danger"  size="large" icon="delete" style={{width: 200}}>Delete</Button>
+                </Popconfirm>
                 <RightDrawer initialValues={this.state.initialValues} filmID={this.state.filmID}/>
-                <Button type="danger" onClick={this.handleDelete}>Delete</Button>
+
+
                 <Card
                     style={{ width: 800 }}
                     title={this.state.film.title}
@@ -115,4 +129,4 @@ class FilmDetail extends Component {
     }
 }
 
-export default FilmDetail;
+export default FilmDetails;
