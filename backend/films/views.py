@@ -89,7 +89,6 @@ class FilmListView(generics.ListAPIView):
     filter_fields = ('release_year', 'title')
 
 
-
 class FilmRetrieveView(generics.RetrieveAPIView):
     queryset = models.Film.objects.all()
     serializer_class = serializers.FilmRetrieveSerializer
