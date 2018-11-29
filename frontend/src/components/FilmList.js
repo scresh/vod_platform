@@ -59,7 +59,7 @@ class FilmList extends Component {
                                         <Avatar src={item.language.icon_url} />
                                     </Tooltip>
                                     }
-                                  title={<a href={`/${item.id}/`}>{item.title}</a>}
+                                  title={<a href={`/films/${item.id}/`}>{item.title}</a>}
                                   description={
                                       item.category.map(
                                           (category) =>
